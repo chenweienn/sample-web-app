@@ -1,0 +1,26 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: sample-java-web-knative
+  namespace: dev
+  labels:
+    apps.tanzu.vmware.com/workload-type: server
+    app.kubernetes.io/part-of: sample-java-web
+    apps.tanzu.vmware.com/has-tests: "false"
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+    apps.tanzu.vmware.com/use-sonarqube: "true"
+spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
+  - name: buildServiceBindings
+    value:
+    - name: maven-settings
+      kind: Secret
+      apiVersion: v1
+  source:
+    git:
+      url: ssh://code.digitsphere.siemens.net/tan.zu.ext/sample-web-app.git
+      ref:
+        branch: master
