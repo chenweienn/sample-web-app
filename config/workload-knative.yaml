@@ -2,7 +2,7 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: sample-java-web-knative
-  namespace: test
+  namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: sample-java-web
@@ -23,4 +23,4 @@ spec:
     git:
       url: ssh://code.digitsphere.siemens.net/tan.zu.ext/sample-web-app.git
       ref:
-        branch: test
+        branch: dev
