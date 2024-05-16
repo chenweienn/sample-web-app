@@ -1,15 +1,16 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: sample-java-web
+  name: sample-web-app
   namespace: test
   labels:
     apps.tanzu.vmware.com/workload-type: server
-    app.kubernetes.io/part-of: sample-java-web
+    app.kubernetes.io/part-of: sample-web-app
     apps.tanzu.vmware.com/has-tests: "false"
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     # apps.tanzu.vmware.com/use-sonarqube: "true"
     apps.tanzu.vmware.com/carvel-package-workflow: "true"
+    apps.tanzu.vmware.com/snc-custom-supply-chain: "true"
 spec:
   params:
   - name: annotations
