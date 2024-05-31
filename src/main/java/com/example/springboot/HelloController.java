@@ -9,11 +9,11 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "#1 Hi, Greetings from root path /";
+		return "#2 Hi, Greetings from root path /";
 	}
 
 	@RequestMapping(value = "/{path}")
 	public String getAnyPath(@PathVariable String path) {
-		return "#1 Hi, Greetings from path /" + path;
+		return "#2 Hi, Greetings from path /" + path;
 	}
 }
